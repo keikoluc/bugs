@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Milliy Hisob.uz{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
+<div class="bg-img">
+
+<div>
+    <header>
+
+  <nav class="navbar">
+    <ul>
+        <li><a href="/" class="{% if request.path == '/' %}active{% endif %}">Bosh sahifa</a></li>
+        <li><a href="/about/" class="{% if '/about' in request.path %}active{% endif %}">Biz haqimizda</a></li>
+        <li><a href="/#xizmatlar">Xizmatlar</a></li>
+        <li><a href="/contact/" class="{% if '/contact' in request.path %}active{% endif %}">Aloqa</a></li>
+
+    </ul>
+  </nav>
+</header>
+
+<main>
+  {% block content %}{% endblock %}
+</main>
+</div>
+
+    <footer>
+  <p>© 2025 "MILLIY HISOB" MCHJ — Barcha huquqlar himoyalangan.</p>
+</footer>
+</div>
+
+
+
+<script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
+
+

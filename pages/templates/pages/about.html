@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block title %}Biz haqimizda{% endblock %}
+{% block content %}
+<h1>{{ about.title }}</h1>
+<p>{{ about.content }}</p>
+{% if about.image %}
+<img src="{{ about.image.url }}" alt="Biz haqimizda rasm">
+{% endif %}
+{% endblock %}

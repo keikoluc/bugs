@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Mahsulotlar{% endblock %}
+{% block content %}
+<h1>Mahsulotlar ro‘yxati</h1>
+
+<div class="product-list">
+  {% for p in products %}
+  <div class="product-card">
+    <img src="{{ p.image.url }}" alt="{{ p.name }}">
+    <h3>{{ p.name }}</h3>
+    <p>{{ p.description|truncatechars:80 }}</p>
+    <strong>{{ p.price }} so‘m</strong>
+  </div>
+  {% empty %}
+  <p>Hozircha mahsulotlar yo‘q.</p>
+  {% endfor %}
+</div>
+{% endblock %}
